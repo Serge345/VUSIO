@@ -19,11 +19,14 @@ class CreateDocumentosTable extends Migration
             $table->integer('numero_radicado');
             $table->String('nombre');
             $table->String('descripcion');
-            $table->String('fecha_entrada');
             $table->integer('tipo')->unsigned();
-            $table->String('correo_electronico')->unique();
+            $table->integer('remitente')->unsigned();
+            $table->integer('destinatario')->unsigned();
+            $table->date('fecha_entrada');
             $table->timestamps();
-            $table->foreing('tipo')->references('id')->on('tipo_documento')->onDelete('cascade');
+            $table->foreign('tipo')->references('id')->on('tipo_documento')->onDelete('cascade');
+            $table->foreign('remitente')->references('id')->on('remitentes')->onDelete('cascade');
+            $table->foreign('destinatario')->references('id')->on('destinatarios')->onDelete('cascade');
         });
     }
 

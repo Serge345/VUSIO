@@ -17,6 +17,8 @@ class CreateRemitentesTable extends Migration
             $table->increments('id');
             $table->integer('numero_identificacion');
             $table->String('nombre');
+            $table->String('ciudad');
+            $table->String('departamento');
             $table->String('direccion');
             $table->String('correo_electronico')->unique();
             $table->enum('tipo',['Persona natural','Entidad'])->default('Persona natural');

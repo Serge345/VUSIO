@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'mainController@index');
+Route::resource('documentos', 'documentsController');
+Route::resource('destinatarios', 'destinatariosController');
+Route::resource('remitentes', 'remitentesController');
+Route::resource('tipos', 'tipoDocumentosController');
+Route::resource('usuarios', 'userController');
