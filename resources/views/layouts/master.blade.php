@@ -75,8 +75,8 @@
                     <h5 class="white-text">Acerca de nosotros</h5>
                     <ul>
                       <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/s3rg3th30ne">Sergio Salazar</a></li>
-                      <li><a class="grey-text text-lighten-3" href="http://www.autonoma.edu.co/conoce-la-uam/informacion-institucional">Síguenos en facebook</a></li>
-
+                      <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/hospitalsanvicente.depaul.79?fref=ts">
+                        Síguenos en facebook</a></li>
                     </ul>
                   </div>
                 </div>
