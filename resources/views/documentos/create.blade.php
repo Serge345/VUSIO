@@ -18,11 +18,14 @@
 <div class="input field col s3">
   {!! Form::label('remitente', 'Remintente', ['for' => 'remitente']) !!}
   {!! Form::select('remitente', $remitente)!!}
+  <p class="lead"> <a href="{{url('remitentes/create')}}">agregar un nuevo remitente</a></p>
+
 </div>
 
 <div class="input field col s3">
   {!! Form::label('destinatario', 'Destinatario', ['for' => 'destinatario']) !!}
   {!! Form::select('destinatario', $destinatario)!!}
+  <p class="lead"> <a href="{{url('destinatarios/create')}}">agregar un nuevo destinatario</a></p>
 </div>
 
 <div class="input-field col s3">
@@ -40,6 +43,7 @@
 <div class="input field col s3">
   {!! Form::label('tipoDocumento', 'Tipo de documento', ['for' => 'tipo']) !!}
   {!! Form::select('tipo',$tipo)!!}
+    <p class="lead"> <a href="{{url('tipos/create')}}">agregar un nuevo tipo de documento</a></p>
 </div>
 
 {!! Form::submit('Agregar documento', ['class' => 'btn btn-primary']) !!}

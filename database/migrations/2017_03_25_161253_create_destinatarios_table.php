@@ -15,8 +15,8 @@ class CreateDestinatariosTable extends Migration
     {
         Schema::create('destinatarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numero_identificacion');
             $table->String('nombre');
+            $table->integer('numero_identificacion');
             $table->String('direccion');
             $table->String('cargo');
             $table->String('dependencia');

@@ -15,8 +15,8 @@ class CreateRemitentesTable extends Migration
     {
         Schema::create('remitentes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numero_identificacion');
             $table->String('nombre');
+            $table->integer('numero_identificacion');
             $table->String('ciudad');
             $table->String('departamento');
             $table->String('direccion');
