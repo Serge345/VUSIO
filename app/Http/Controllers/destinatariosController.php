@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Database\QueryException;
+use App\Destinatario;
 
 class destinatariosController extends Controller
 {
@@ -13,18 +16,19 @@ class destinatariosController extends Controller
 
     public function store(Request $request){
       $this->validate($request,[
-            'nombre'                  => 'required | string | max:100',
-            'numero_identificacion'   => 'required | integer',
-            'cargo'                   => 'required | String',
-            'dependencia'             => 'required | String',
-            'direccion'               => 'required | String',
-            'correo_electronico'      => 'required | email'
+            'nombre'                  => 'bail|required|String | max:100',
+            'numero_identificacion'   => 'bail|required|integer',
+            'cargo'                   => 'bail|required|String',
+            'dependencia'             => 'bail|required|String',
+            'direccion'               => 'bail|required|String',
+            'correo_electronico'      => 'bail|required|email'
       ]);
       $input=$request->all();
       try{
           Destinatario::create($input);
           Session::flash('flash_message', 'El destinatario ha sido registrado en el
           sistema');
+          return redirect('/destinatarios');
 
       }
       catch(QueryException $e){

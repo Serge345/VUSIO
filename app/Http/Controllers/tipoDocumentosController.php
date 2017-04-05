@@ -19,13 +19,14 @@ class tipoDocumentosController extends Controller
     public function store(Request $request){
         $this->validate($request,[
           'nombre'              => 'required | String | max:150',
+          'descripcion'         => 'required | String ',
           'tiempo_respuesta'    => 'required | integer'
         ]);
         $input = $request->all();
         try{
             tipo_documento::create($input);
             Session::flash('flash_message', "El tipo de documento se ha añadido al sistema");
-            return redirect()->back();
+            return redirect('/tipos');
         }
         catch(QueryException $e){
           Session::flash('flash_message',"Ocurrio un problema en la creación del tipo.
@@ -67,6 +68,7 @@ class tipoDocumentosController extends Controller
         try{
           $this->validate($request,[
             'nombre'              => 'required | String | max:150',
+            'descripcion'         => 'required | String',
             'tiempo_respuesta'    => 'required | integer'
           ]);
           $input = $request->all();

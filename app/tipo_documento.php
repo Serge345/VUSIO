@@ -8,6 +8,6 @@ class tipo_documento extends Model
 {
     //
     protected $fillable=[
-      'nombre','tiempo_respuesta'
+      'nombre','descripcion','tiempo_respuesta'
     ];
 }

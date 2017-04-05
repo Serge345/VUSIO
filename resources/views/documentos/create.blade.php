@@ -41,9 +41,9 @@
 </div>
 
 <div class="input field col s3">
-  {!! Form::label('tipoDocumento', 'Tipo de documento', ['for' => 'tipo']) !!}
+  {!! Form::label('tipoDocumento', 'Categoría', ['for' => 'tipo']) !!}
   {!! Form::select('tipo',$tipo)!!}
-    <p class="lead"> <a href="{{url('tipos/create')}}">agregar un nuevo destinatario</a></p>
+    <p class="lead"> <a href="{{url('tipos/create')}}">agregar nueva categoria</a></p>
 </div>
 
 {!! Form::submit('Agregar documento', ['class' => 'btn btn-primary']) !!}

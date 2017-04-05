@@ -96,7 +96,7 @@ class remitentesController extends Controller
 
     }
 
-    public function delete(Request $request, $id){
+    public function destroy(Request $request, $id){
                     try{
                           $remitente = Remitente::findOrFail($id);
                           $remitente->delete();
